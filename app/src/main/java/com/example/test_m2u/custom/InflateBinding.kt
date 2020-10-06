@@ -4,7 +4,6 @@ package com.example.test_m2u.custom
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.example.cardreader.custom.ItemViewBuilder
 import kotlin.reflect.KClass
 
 interface InflateBinding {

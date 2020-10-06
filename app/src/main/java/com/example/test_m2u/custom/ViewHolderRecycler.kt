@@ -1,4 +1,4 @@
-package com.example.cardreader.custom
+package com.example.test_m2u.custom
 
 import android.content.Context
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.example.test_m2u.custom.InflateBinding
 
 open class RecyclerViewHolder(val builder: ItemViewBuilder<*, *>) :
     RecyclerView.ViewHolder(builder.build())

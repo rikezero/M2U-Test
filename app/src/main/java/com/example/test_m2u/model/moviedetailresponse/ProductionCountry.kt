@@ -1,6 +1,7 @@
-package com.example.test_m2u.model
+package com.example.test_m2u.model.moviedetailresponse
 
 
+import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import android.os.Parcelable

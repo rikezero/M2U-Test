@@ -1,4 +1,4 @@
-package com.example.cardreader.custom
+package com.example.test_m2u.custom
 
 import android.content.Context
 import android.util.AttributeSet

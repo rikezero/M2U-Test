@@ -1,6 +1,7 @@
-package com.example.test_m2u.model
+package com.example.test_m2u.model.moviedetailresponse
 
 
+import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import android.os.Parcelable
@@ -12,8 +13,6 @@ data class MovieDetailResponse(
     val adult: Boolean,
     @SerializedName("backdrop_path")
     val backdropPath: String,
-    @SerializedName("belongs_to_collection")
-    val belongsToCollection: Any,
     @SerializedName("budget")
     val budget: Int,
     @SerializedName("genres")

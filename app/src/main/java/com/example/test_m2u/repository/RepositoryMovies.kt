@@ -1,6 +1,6 @@
 package com.example.test_m2u.repository
 
-import com.example.test_m2u.model.MovieDetailResponse
+import com.example.test_m2u.model.moviedetailresponse.MovieDetailResponse
 import com.example.test_m2u.retrofit.RetroInit
 
 
@@ -10,8 +10,8 @@ class RepositoryMovies {
 
     private val serviceMovies = RetroInit(url).create(service)
 
-    suspend fun getMovieDetail():MovieDetailResponse {
-        return serviceMovies.getMovieDetail(APP_ID)
+    suspend fun getMovieDetail(): MovieDetailResponse {
+        return serviceMovies.getMovieDetail(apikey = APP_ID)
     }
 
 }
