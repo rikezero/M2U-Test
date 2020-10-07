@@ -19,7 +19,6 @@ class ItemViewMovie : ItemViewBuilder<Movie, ItemSimilarBinding>() {
 
     override fun ItemSimilarBinding.onBind(position: Int) {
 
-
         (collection as Set<Movie>).elementAt(position).run {
             itemImage.setImageFromURL("https://image.tmdb.org/t/p/original$backdropPath")
             itemName.text = title
@@ -37,13 +36,13 @@ class ItemViewMovie : ItemViewBuilder<Movie, ItemSimilarBinding>() {
                         genre += "Animation "
                     }
                     it.equals(35) -> {
-                    genre += "Comedy "
+                        genre += "Comedy "
                     }
                     it.equals(80) -> {
-                    genre += "Crime "
+                        genre += "Crime "
                     }
                     it.equals(99) -> {
-                    genre += "Documentary "
+                        genre += "Documentary "
                     }
                     it.equals(18) -> {
                         genre += "Drama "
@@ -58,7 +57,7 @@ class ItemViewMovie : ItemViewBuilder<Movie, ItemSimilarBinding>() {
                         genre += "History "
                     }
                     it.equals(27) -> {
-                    genre += "Horror "
+                        genre += "Horror "
                     }
                     it.equals(10402) -> {
                         genre += "Music "
@@ -86,5 +85,4 @@ class ItemViewMovie : ItemViewBuilder<Movie, ItemSimilarBinding>() {
             itemType.text = genre
         }
     }
-
 }
