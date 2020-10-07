@@ -1,6 +1,7 @@
 package com.example.test_m2u.repository
 
 import com.example.test_m2u.model.moviedetailresponse.MovieDetailResponse
+import com.example.test_m2u.model.similarmovieresponse.SimilarMovieResponse
 import com.example.test_m2u.retrofit.RetroInit
 
 
@@ -12,6 +13,10 @@ class RepositoryMovies {
 
     suspend fun getMovieDetail(): MovieDetailResponse {
         return serviceMovies.getMovieDetail(apikey = APP_ID)
+    }
+
+    suspend fun getSimilarMovies(movieID: String, page:Int): SimilarMovieResponse {
+        return serviceMovies.getSimilarMovies(movieID, APP_ID, page)
     }
 
 }

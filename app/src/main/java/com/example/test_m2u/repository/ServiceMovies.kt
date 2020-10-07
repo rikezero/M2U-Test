@@ -25,7 +25,9 @@ interface ServiceMovies {
         @Path("movie_id")
         movie:String = MOVIE,
         @Query("api_key")
-        apikey: String
+        apikey: String,
+        @Query("page")
+        page: Int
     ): SimilarMovieResponse
 
 

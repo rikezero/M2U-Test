@@ -8,8 +8,10 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
 import com.example.test_m2u.base.ContextFinder
+import com.squareup.picasso.Picasso
 import kotlin.reflect.KClass
 import kotlin.reflect.KFunction0
 
@@ -50,6 +52,8 @@ val Context.activity: Activity
         else -> (this as ContextWrapper).baseContext.activity
     }
 
+infix fun ImageView.setImageFromURL(url: Any?) = Picasso.get().load(url.toString()).into(this)
 
+fun ImageView.setImageFromURLwError(url: Any?, placeholder: Int) = Picasso.get().load(url.toString()).error(placeholder).into(this)
 
 

@@ -5,7 +5,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.test_m2u.model.moviedetailresponse.MovieDetailResponse
-import com.example.test_m2u.model.similarmovieresponse.Result
+import com.example.test_m2u.model.similarmovieresponse.Movie
 import com.example.test_m2u.repository.RepositoryMovies
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -13,8 +13,9 @@ import kotlinx.coroutines.launch
 
 class ActMainViewModel(application: Application) : AndroidViewModel(application) {
 
-    val dataSet = MutableLiveData<MutableList<Result>>()
+    val dataSet = MutableLiveData<List<Movie>>()
     val movie = MutableLiveData<MovieDetailResponse>()
+    val pageTotal = MutableLiveData<Int>()
     private val context = getApplication<Application>().applicationContext
 
     //private var repository = RepositoryDatabase(context)
@@ -25,8 +26,11 @@ class ActMainViewModel(application: Application) : AndroidViewModel(application)
         movie.postValue(repositoryTMDB.getMovieDetail())
     }
 
-    fun getSimilarMovies() {
-        //dataSet.postValue()
+    fun getSimilarMovies(movieID: String,page: Int = 1) = CoroutineScope(Dispatchers.IO).launch{
+        val response = repositoryTMDB.getSimilarMovies(movieID,page)
+        dataSet.postValue(response.movies)
+        pageTotal.postValue(response.totalPages)
+
     }
 
 }

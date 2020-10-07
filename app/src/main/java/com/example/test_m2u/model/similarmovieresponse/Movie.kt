@@ -8,7 +8,7 @@ import android.os.Parcelable
 
 @SuppressLint("ParcelCreator")
 @Parcelize
-data class Result(
+data class Movie(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
@@ -33,8 +33,6 @@ data class Result(
     val title: String,
     @SerializedName("video")
     val video: Boolean,
-    @SerializedName("vote_average")
-    val voteAverage: Int,
     @SerializedName("vote_count")
     val voteCount: Int
 ) : Parcelable
