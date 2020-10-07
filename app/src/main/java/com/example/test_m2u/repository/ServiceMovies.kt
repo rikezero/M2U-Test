@@ -1,6 +1,7 @@
 package com.example.test_m2u.repository
 
 
+import com.example.test_m2u.model.genreresponse.GenreResponse
 import com.example.test_m2u.model.moviedetailresponse.MovieDetailResponse
 import com.example.test_m2u.model.similarmovieresponse.SimilarMovieResponse
 import retrofit2.http.GET
@@ -30,5 +31,10 @@ interface ServiceMovies {
         page: Int
     ): SimilarMovieResponse
 
+    @GET("genre/movie/list")
+    suspend fun getGenres(
+        @Query("api_key")
+        apikey: String
+    ): GenreResponse
 
 }
